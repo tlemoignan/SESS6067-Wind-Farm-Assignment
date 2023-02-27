@@ -1,0 +1,218 @@
+# This is an input file for pyTurbine.py
+# HOW TO USE:
+# - Each line starting with a hash symbol is treated as a comment and ignored
+# - Each empty line is also ignored
+# - Individual variables are defined by a non-numeric set of characters proceeded with an equal sign, "="
+#	(it's OK to put spaces or tabs between the variable name or value and the equal sign)
+# - Data arrays are defined with the keyword "data" proceeded with a keyword "variables" in two subsequent
+#	lines (it's OK to put empty lines or comments between them); name of the array must be placed
+#	after an equal sign ("=") proceeding the keyword "data"
+# - In order to work, the program requires:
+#		variables: diameter, Nblades
+#		arrays: blade, conditions, aero
+# - The file should be placed in the same directory as pyTurbine.py or the path in the Python script
+#	should be modified accordingly (see the inputFilename variable)
+
+# ---------------
+# blade geometry (originally in BLADE.DAT)
+# diameter [m]
+diameter=150.0
+
+# No. blades
+Nblades=3
+
+# Scale Factor
+scalefactor=1.0
+
+#speed at 10 m
+Uten=7.5
+
+#Hub Height m
+HubHeight=120.0
+
+# radial distribution of blade parameters
+data="blade"
+variables="x/R, c/D, twist [deg], Asec"
+0.15 0.096	16	         0.1
+0.24 0.088	10.92985869	 0.1
+0.34 0.081	 7.569588458 0.1
+0.43 0.074	 5.318132704 0.1
+0.53 0.067	 3.75044828	 0.1
+0.62 0.06	 2.800874635 0.1
+0.72 0.053	 2.163123228 0.1	
+0.81 0.046	 1.626722729 0.1
+0.91 0.039	 1.19493954	 0.1
+
+# ---------------
+# operational condition sweep (originally passed from the command line)
+data="conditions"
+variables="Va [m/s], pitch [deg], rpm"
+1	1	7
+1.2	1	7
+1.4	1	7
+1.6	1	7
+1.8	1	7
+2	1	7
+2.2	1	7
+2.4	1	7
+2.6	1	7
+2.8	1	7
+3	1	7
+3.2	1	7
+3.4	1	7
+3.6	1	7
+3.8	1	7
+4	1	7
+4.2	1	7
+4.4	1	7
+4.6	1	7
+4.8	1	7
+5	1	7
+5.2	1	7
+5.4	1	7
+5.6	1	7
+5.8	1	7
+6	1	7
+6.2	1	7
+6.4	1	7
+6.6	1	7
+6.8	1	7
+7	1	7
+7.2	1	7
+7.4	1	7
+7.6	1	7
+7.8	1	7
+8	1	7
+8.2	1	7
+8.4	1	7
+8.6	1	7
+8.8	1	7
+9	1	7
+9.2	1	7
+9.4	1	7
+9.6	1	7
+9.8	1	7
+10	1	7
+10.2	1	7
+10.4	1	7
+10.6	1	7
+10.8	1	7
+11	1	7
+11.2	1	7
+11.4	1	7
+11.6	1	7
+11.8	1	7
+12	1	7
+12.2	1	7
+12.4	1	7
+12.6	1	7
+12.8	1	7
+13	1	7
+13.2	1	7
+13.4	1	7
+13.6	1	7
+13.8	1	7
+14	1	7
+14.2	1	7
+14.4	1	7
+14.6	1	7
+14.8	1	7
+15	1	7
+15.2	1	7
+15.4	1	7
+15.6	1	7
+15.8	1	7
+16	1	7
+16.2	1	7
+16.4	1	7
+16.6	1	7
+16.8	1	7
+17	1	7
+17.2	1	7
+17.4	1	7
+17.6	1	7
+17.8	1	7
+18	1	7
+18.2	1	7
+18.4	1	7
+18.6	1	7
+18.8	1	7
+19	1	7
+19.2	1	7
+19.4	1	7
+19.6	1	7
+19.8	1	7
+20	1	7
+20.2	1	7
+20.4	1	7
+20.6	1	7
+20.8	1	7
+21	1	7
+21.2	1	7
+21.4	1	7
+21.6	1	7
+21.8	1	7
+22	1	7
+22.2	1	7
+22.4	1	7
+22.6	1	7
+22.8	1	7
+23	1	7
+23.2	1	7
+23.4	1	7
+23.6	1	7
+23.8	1	7
+24	1	7
+24.2	1	7
+24.4	1	7
+24.6	1	7
+24.8	1	7
+25	1	7
+25.2	1	7
+25.4	1	7
+25.6	1	7
+25.8	1	7
+26	1	7
+26.2	1	7
+26.4	1	7
+26.6	1	7
+26.8	1	7
+27	1	7
+27.2	1	7
+27.4	1	7
+27.6	1	7
+27.8	1	7
+28	1	7
+28.2	1	7
+28.4	1	7
+28.6	1	7
+28.8	1	7
+29	1	7
+29.2	1	7
+29.4	1	7
+29.6	1	7
+29.8	1	7
+30	1	7
+
+
+# Aerodynamic coefficients of the wind turbine blade section (originally in AERO.DAT)
+data="aero"
+variables="Aoa [deg], Cl, Cd, Mcrit"
+-50 -0.16 0.03   0.5
+-35 -0.18 0.027  0.5
+-20 -0.20 0.025  0.5
+-15 -0.35 0.02   0.5
+-10 -0.79 0.015  0.5
+ -5 -0.4  0.007  0.5
+  0  0.1  0.001  0.5
+  5  0.5  0.001  0.5
+ 10  1.0  0.002  0.5
+ 15  1.2  0.0025 0.5
+ 17  0.75 0.005  0.5
+ 19  0.5  0.0075 0.5
+ 20  0.25 0.01   0.5
+ 22  0.15 0.01   0.5
+ 26  0.12 0.01   0.5
+ 30  0.1  0.01   0.5
+ 40  0.1  0.01   0.5
+ 50  0.1  0.015  0.5
